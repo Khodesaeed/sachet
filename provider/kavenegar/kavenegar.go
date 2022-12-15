@@ -34,7 +34,7 @@ func NewKaveNegar(config Config) *KaveNegar {
 
 // Building the API and call the KaveNegar endpoint to send SMS to the configured receptor from config.yaml.
 func (ns *KaveNegar) Send(message sachet.Message) error {
-	url := "https://api.kavenegar.com/v1/" + ns.APIToken + "/sms/send.json"
+	url := "https://api.kavenegar.com/v1/" + ns.APIToken + "/verify/lookup.json"
 	request, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return err
